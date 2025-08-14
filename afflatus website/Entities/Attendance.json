@@ -1,0 +1,82 @@
+{
+  "name": "Attendance",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Attendance date"
+    },
+    "clock_in": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Clock in time"
+    },
+    "clock_out": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Clock out time"
+    },
+    "break_start": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Break start time"
+    },
+    "break_end": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Break end time"
+    },
+    "total_hours": {
+      "type": "number",
+      "description": "Total working hours"
+    },
+    "overtime_hours": {
+      "type": "number",
+      "description": "Overtime hours"
+    },
+    "break_duration": {
+      "type": "number",
+      "description": "Break duration in minutes"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "present",
+        "absent",
+        "late",
+        "early_leave",
+        "on_break"
+      ],
+      "default": "present",
+      "description": "Attendance status"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "description": "Clock in/out location"
+    }
+  },
+  "required": [
+    "user_email",
+    "date"
+  ]
+}
